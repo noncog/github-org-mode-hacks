@@ -1,0 +1,6 @@
+#+HTML:<h1 align="center">GitHub README.org Hacks</h1>
+#+HTML: <p align="center"><a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"> </a><a href="https://www.gnu.org/software/emacs/"><img src="https://img.shields.io/badge/Made_with-Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a></p>
+
+#+HTML:<div align="center">
+Sharing the undocumented things you can do with GitHub, org-mode, and HTML to make a better README.
+#+HTML:</div>
