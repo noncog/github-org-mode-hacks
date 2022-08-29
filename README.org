@@ -4,3 +4,7 @@
 #+HTML:<div align="center">
 Sharing the undocumented things you can do with GitHub, org-mode, and HTML to make a better README.
 #+HTML:</div>
+* Why?
+The README, is your primary method to portray information about a repository to the reader. GitHub supports using =org-mode= to create a README, but it's implementation neither works as claimed nor is complete.
+
+That's where these hacks come in, primarily using HTML to get around these limitations.
