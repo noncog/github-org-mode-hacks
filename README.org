@@ -12,6 +12,9 @@ That's where these hacks come in, primarily using HTML, to get around these limi
 ** Document Structure
 This document covers methods to use org-mode and HTML together. The headings are sorted by the goal we want to achieve, not by the method used to achieve it.
 
+** Table of Contents
+- [[#background][Background]]
+
 ** Background
 GitHub uses [[https://github.com/wallyqs/org-ruby][org-ruby]] to parse and export an org document as HTML, then it is sanitized using their [[https://github.com/gjtorikian/html-pipeline/blob/main/lib/html/pipeline/sanitization_filter.rb][HTML-pipeline]].
 
