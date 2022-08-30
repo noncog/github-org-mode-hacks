@@ -38,3 +38,31 @@ In general this is missing from org-mode, a feature that markdown has and "we" d
 
 **** Verses
 Org-mode's =#+BEGIN_VERSE= and =#+END_VERSE= syntax has no translation to HTML. This is not a problem for us, since rarely do we have verses in a /code/ repository.
+
+** HTML in Org Documents
+#+HTML:<p align="center">Welcome our Lord and Savior, HTML!</p>
+
+Although this is our primary method of overcoming the limitations of org-ruby and GitHub, it should be noted that HTML offers us so much more than just fixing org-ruby's shortcomings.
+
+Org-mode supports the use of two syntaxes for writing HTML in a document.
+*** Inline
+Useful for one-liners.
+
+Syntax:
+#+BEGIN_SRC
+#+HTML:
+#+END_SRC
+
+Example:
+#+BEGIN_SRC
+#+HTML:<p>Some HTML</p>
+#+END_SRC
+
+*** Block
+Useful for complex or multi-line HTML.
+
+Syntax:
+#+HTML:<pre>#+BEGIN_HTML<br>#+END_HTML</pre>
+
+Example:
+#+HTML:<pre>#+BEGIN_HTML<br>&lt;div&gt;<br>&lt;p&gt;Some longer HTML!&lt;/p&gt;<br>&lt;/div&gt;<br>#+END_HTML</pre>
