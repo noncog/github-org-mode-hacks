@@ -67,3 +67,31 @@ Syntax:
 
 Example:
 #+HTML:<pre>#+BEGIN_HTML<br>&lt;div&gt;<br>&lt;p&gt;Some longer HTML!&lt;/p&gt;<br>&lt;/div&gt;<br>#+END_HTML</pre>
+
+** Centering / Text Alignment
+The HTML attribute =align= controls text alignment, including centering.
+
+Syntax:
+#+BEGIN_SRC
+<element align="center">
+Some stuff
+</element>
+#+END_SRC
+
+Example:
+#+BEGIN_SRC
+<div align="center">
+Some stuff
+</div>
+#+END_SRC
+
+The centering attribute can be applied to many [[https://www.geeksforgeeks.org/html-align-attribute/][tags]], but I recommend keeping it simple.
+
+Recommended tags:
+#+BEGIN_EXAMPLE
+<div> <-- Recommended over <p>, as it works more often.
+<p>
+#+END_EXAMPLE
+
+Wrapping any other tags in these results in them being centered, regardless if they can accept the alignment attribute themselves.
+
