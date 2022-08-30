@@ -107,7 +107,7 @@ Example:
 
 Result:
 #+HTML:<div align="center">
-***** Org Heading
+**** Org Heading
 Some text.
 #+HTML:</div>
 ** Underlining
