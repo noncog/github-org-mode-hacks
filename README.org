@@ -81,7 +81,7 @@ Some stuff
 #+HTML:<pre>#+HTML:&lt;div align="center"&gt;some centered stuff&lt;/div&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;div align="center"&gt;<br>some centered stuff<br>&lt;/div&gt;<br>#+END_HTML</pre>
 The centering attribute can be applied to many [[https://www.geeksforgeeks.org/html-align-attribute/][tags]], but I recommend keeping it simple.
 
-*** Recommended tags:
+Recommended tags:
 #+BEGIN_EXAMPLE
 <div> <-- Recommended over <p>, as it works more often.
 <p>
@@ -89,7 +89,7 @@ The centering attribute can be applied to many [[https://www.geeksforgeeks.org/h
 
 Wrapping any other tags in these results in them being centered, regardless if they can accept the alignment attribute themselves.
 
-*** Alignment options:
+Alignment options:
 #+BEGIN_EXAMPLE
 left
 right
