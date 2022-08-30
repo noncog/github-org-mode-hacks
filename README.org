@@ -26,7 +26,7 @@ The problem with this, is that the translations used by GitHub/org-ruby are inco
 
 The point is, that most things you can do with org-mode are supported, but some things are not. For example, headings are translated directly to HTML heading tags (<h1>,<h2>,etc.), tables are translated to table tags (<table>), etc.
 
-However, the following do not work correctly and must be fixed using HTML:
+_However, the following do not work correctly and must be fixed using HTML:_
 **** Centering
 #+HTML:<p>Org-mode's <code>#+BEGIN_CENTER</code> and <code>#+END_CENTER</code> syntax are translated to <code>&lt;div&gt;</code> but it's missing the <code>align="center"</code> attribute.
 
