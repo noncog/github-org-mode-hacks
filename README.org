@@ -80,12 +80,7 @@ Some stuff
 #+END_SRC
 
 Example:
-#+BEGIN_SRC
-<div align="center">
-Some stuff
-</div>
-#+END_SRC
-
+#+HTML:<pre>#+HTML:&lt;div align="center"&gt;some centered stuff&lt;/div&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;div align="center"&gt;<br>some centered stuff<br>&lt;/div&gt;<br>#+END_HTML</pre>
 The centering attribute can be applied to many [[https://www.geeksforgeeks.org/html-align-attribute/][tags]], but I recommend keeping it simple.
 
 Recommended tags:
@@ -105,7 +100,7 @@ justify
 #+END_EXAMPLE
 
 ** Underlining
-GitHub honors the [[https://www.w3schools.com/TAGs/tag_ins.asp][insert tag]] for underlining, even though it's not specifically for underlining, it gets the job done.
+GitHub honors the [[https://www.w3schools.com/TAGs/tag_ins.asp][insert tag]] for underlining. Even though it's not specifically for underlining, it gets the job done.
 
 Syntax:
 #+BEGIN_SRC
