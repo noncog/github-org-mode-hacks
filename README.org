@@ -95,3 +95,10 @@ Recommended tags:
 
 Wrapping any other tags in these results in them being centered, regardless if they can accept the alignment attribute themselves.
 
+Other alignment options:
+#+BEGIN_EXAMPLE
+left
+right
+center
+justify
+#+END_EXAMPLE
