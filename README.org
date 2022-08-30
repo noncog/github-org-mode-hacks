@@ -19,13 +19,13 @@ These documents allow us to understand what you can and can't do using org-mode 
 *** org-ruby
 Through this, org-mode syntax is translated directly into HTML. The rules for translation are modifiable. See org-ruby for the default translation list.
 
-The problem with this, is that the translations used by GitHub/org-ruby are incomplete. This is can be fixed by including a YAML file, but we don't need another file in our repository just for formatting a README.
+The problem with this, is that the translations used by GitHub/org-ruby are incomplete. This can be fixed by including a YAML file, but we don't need another file in our repository just for formatting a README.
 
 The point is, that most things you can do with org-mode are supported, but some things are not. For example, headings are translated directly to HTML heading tags (<h1>,<h2>,etc.), tables are translated to table tags (<table>), etc.
 
 However, the following do not work correctly and must be fixed by using HTML:
 **** Centering
-Org-mode's =#+BEGIN_CENTER= and =#+END_CENTER= syntax are translated to =<div>= which is missing it's ~align="center"~ attribute.
+#+HTML:<p>Org-mode's <code>#+BEGIN_CENTER</code> and <code>#+END_CENTER</code> syntax are translated to <code>&lt;div&gt;</code> but it's missing the <code>align="center"</code> attribute.
 
 **** Underlining
 Org-mode's underline syntax =_text_= is translated to ~<span style=\"text-decoration:underline;\>~ which is incorrect and not honored by GitHub.
