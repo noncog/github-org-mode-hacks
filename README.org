@@ -104,6 +104,12 @@ You can use HTML inline calls to start a center alignment and end it later.
 
 Example:
 #+HTML:<pre>#+HTML:&lt;div align="center"&gt;<br>* Org Heading<br>  Some text.<br>#+HTML:&lt;/div&gt;</pre>
+
+Result:
+#+HTML:<div align="center">
+***** Org Heading
+Some text.
+#+HTML:</div>
 ** Underlining
 GitHub honors the [[https://www.w3schools.com/TAGs/tag_ins.asp][insert tag]] for underlining. Even though it's not specifically for underlining, it gets the job done.
 
