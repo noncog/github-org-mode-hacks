@@ -103,3 +103,16 @@ right
 center
 justify
 #+END_EXAMPLE
+
+** Underlining
+GitHub honors the [[https://www.w3schools.com/TAGs/tag_ins.asp][insert tag]] for underlining, even though it's not specifically for underlining, it gets the job done.
+
+Syntax:
+#+BEGIN_SRC
+<ins>
+</ins>
+#+END_SRC
+
+Example:
+#+HTML:<pre>#+HTML:&lt;ins&gt;some underlined text&lt;/ins&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;ins&gt;<br>some underlined text<br>&lt;/ins&gt;<br>#+END_HTML</pre>
+#+HTML:<caption>Result:</caption><br><ins>some underlined text</ins>
