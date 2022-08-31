@@ -71,6 +71,8 @@ Example:
 *** Advice
 Use HTML comments to organize sections in large HTML blocks.
 
+The wording in the comment tag can be formatted any way you choose.
+
 Syntax:
 #+BEGIN_SRC
 <!-- SECTION:START -->
