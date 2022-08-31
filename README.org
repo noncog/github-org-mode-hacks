@@ -9,6 +9,7 @@ The README, is your primary method to portray information about a repository to 
 
 That's where these hacks come in, primarily using HTML, to get around these limitations, as well as to show some additional possibilities and preferences.
 
+And, I haven't found anyone talking about these techniques, so I thought I would share them. Please consider submitting yours.
 ** Document Structure
 This document covers methods to use org-mode and HTML together. The headings are sorted by the goal we want to achieve, not by the method used to achieve it.
 
