@@ -40,9 +40,6 @@ Org-mode's underline syntax =_text_= is translated to ~<span style=\"text-decora
 **** Folding
 In general this is missing from org-mode, a feature that markdown has and "we" don't.
 
-**** Verses
-Org-mode's =#+BEGIN_VERSE= and =#+END_VERSE= syntax has no translation to HTML. This is not a problem for us, since rarely do we have verses in a /code/ repository.
-
 ** HTML in Org Documents
 #+HTML:<p align="center">Welcome our Lord and Savior, HTML!</p>
 
