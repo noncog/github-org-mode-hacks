@@ -162,3 +162,50 @@ Result:
 **** Org Heading
 Some text.
 #+HTML:</details>
+** Code
+You can use both HTML and org-mode to generate code blocks. Each have their appropriate use cases.
+*** Inline
+=Looks like this.=
+
+I use these to highlight commands and software where appropriate.
+**** Org Syntax
+
+Syntax:
+#+BEGIN_SRC
+Verbatim:
+=SOME INFO= <-- My first choice.
+
+or
+
+Code:
+~SOME INFO~ <-- Useful if text inside has an equal sign.
+#+END_SRC
+
+Advantages:
+- Useful for quick inline highlighting.
+- Text in these strings is not processed for org specific syntax.
+
+Disadvantages:
+- Does not always work on GitHub.
+- Cannot use org-mode link syntax, to put a link inside of a code block.
+
+**** HTML
+
+Syntax:
+#+BEGIN_SRC
+<code>some text</code>
+#+END_SRC
+
+Example:
+#+HTML:<pre>#+HTML:&lt;code&gt;some text&lt;/code&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;p&gt;This is an inline code with a &lt;code&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/code&gt;!&lt;/p&gt;<br>#+END_HTML</pre>
+
+Advantages:
+- More universal.
+- Can include links and other formatting inside the code block.
+
+Disadvantages:
+- Not quick to use.
+
+*** Block
+**** Org Syntax
+**** HTML
