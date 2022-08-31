@@ -127,6 +127,8 @@ Example:
 ** Folding
 This killer feature allows us to hide information in a fold. This is missing from org-mode, but fear not, HTML to the rescue.
 
+#+HTML:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_summary.asp">summary / details</a> tags for folding sections.</p>
+
 Syntax:
 #+BEGIN_SRC
 <details>
