@@ -77,6 +77,10 @@ Syntax:
 Some HTML
 <!-- SECTION:END -->
 #+END_SRC
+
+Example:
+#+HTML:<pre>#+BEGIN_HTML<br>&lt;!-- SECTION:START --&gt;<br>Some HTML<br>&lt;!-- SECTION:END --&gt;<br><br>&lt;!-- OTHER_SECTION:START --&gt;<br>Some HTML<br>&lt;!-- OTHER_SECTION:END --&gt;<br>#+HTML_END<pre>
+
 ** Centering / Text Alignment
 #+HTML:<p>The HTML attribute <code><a href="https://www.geeksforgeeks.org/html-align-attribute/">align</a></code> controls text alignment, including centering.</p>
 
