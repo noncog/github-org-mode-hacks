@@ -187,7 +187,8 @@ Advantages:
 
 Disadvantages:
 - Does not always work on GitHub.
-- Cannot use org-mode link syntax, to put a link inside of a code block.
+- Cannot use org-mode link syntax, to put a
+#+HTML:<p><code><a href="#org-syntax">link</a></code> inside of a code block.</p>
 
 **** HTML
 
