@@ -195,6 +195,7 @@ Disadvantages:
 #+END_HTML
 
 **** HTML
+#+HTML:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_code.asp">code</a></code> tag for inline code blocks.</p>
 
 Syntax:
 #+BEGIN_SRC
