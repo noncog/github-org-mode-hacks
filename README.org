@@ -128,6 +128,49 @@ Result:
 **** Org Heading
 Some text.
 #+HTML:</div>
+*** Centering Code Blocks
+It's also possible to center the text inside of a code block, not the block itself.
+
+This is useful for posting ASCII art to your README.
+
+Just use the div centering syntax on a code block. Either all in one or using starting the centering with an HTML inline call and closing it later, like in the previous example.
+
+Syntax:
+#+HTML:<pre>#+HTML:&lt;div align="center"&gt;<br>HTML or org code block<br>&lt;/div&gt;<br>&lt;/pre&gt;<br><br>or<br><br>#+HTML:&lt;div align="center"&gt;<br>#+BEGIN_SRC<br>ASCII Art<br>#+END_SRC<br>#+HTML:&lt;/div&gt;</pre>
+
+Example:
+#+HTML:<div align="center">
+#+BEGIN_SRC
+
+                 uuuuuuu
+             uu$$$$$$$$$$$uu
+          uu$$$$$$$$$$$$$$$$$uu
+         u$$$$$$$$$$$$$$$$$$$$$u
+        u$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$"   "$$$"   "$$$$$$u
+       "$$$$"      u$u       $$$$"
+        $$$u       u$u       u$$$
+        $$$u      u$$$u      u$$$
+         "$$$$uu$$$   $$$uu$$$$"
+          "$$$$$$$"   "$$$$$$$"
+            u$$$$$$$u$$$$$$$u
+             u$"$"$"$"$"$"$u
+  uuu        $$u$ $ $ $ $u$$       uuu
+ u$$$$        $$$$$u$u$u$$$       u$$$$
+  $$$$$uu      "$$$$$$$$$"     uu$$$$$$
+u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
+$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
+ """      ""$$$$$$$$$$$uu ""$"""
+           uuuu ""$$$$$$$$$$uuu
+  u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
+  $$$$$$$$$$""""           ""$$$$$$$$$$$"
+   "$$$$$"                      ""$$$$""
+     $$$"                         $$$$"
+#+END_SRC
+#+HTML:</div>
+
 ** Underlining
 #+HTML:<p>Github honors the <code><a href="https://www.w3schools.com/TAGs/tag_ins.asp">insert</a></code> tag for underlining. Even though it's not specifically for underlining, it gets the job done.</p>
 
