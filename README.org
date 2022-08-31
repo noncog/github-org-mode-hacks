@@ -190,6 +190,7 @@ Disadvantages:
 <ul>
 <li>Does not always work on Github.</li>
 <li>Cannot use org-mode link syntax to put <code><a href="#org-syntax">link</a></code> inside of a code block.</li>
+</ul>
 #+END_HTML
 
 **** HTML
