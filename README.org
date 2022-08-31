@@ -123,3 +123,16 @@ Syntax:
 Example:
 #+HTML:<pre>#+HTML:&lt;ins&gt;some underlined text&lt;/ins&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;ins&gt;<br>some underlined text<br>&lt;/ins&gt;<br>#+END_HTML</pre>
 #+HTML:<caption>Result:</caption><br><ins>some underlined text</ins>
+** Folding
+This killer feature allows us to hide information in a fold. This is missing from org-mode, but fear not, HTML to the rescue.
+
+Syntax:
+#+BEGIN_SRC
+<details>
+<summary>The title text or heading of our fold</summary>
+<p>Some hidden text</p>
+</details>
+#+END_SRC
+
+Example:
+#+HTML:<pre>#+BEGIN_HTML<br>&lt;details&gt;<br>&lt;summary&gt;Hidden Section - Click Me!&lt;summary&gt;<br>&lt;p&gt;Some hidden text&lt;/p&gt;<br>&lt;/details&gt;<br>#+END_HTML
