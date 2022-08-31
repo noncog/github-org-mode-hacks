@@ -186,8 +186,11 @@ Advantages:
 - Text in these strings is not processed for org specific syntax.
 
 Disadvantages:
-- Does not always work on GitHub.
-#+HTML:<li>Cannot use org-mode link syntax to put <code><a href="#org-syntax">link</a></code> inside of a code block.</li>
+#+BEGIN_HTML
+<ul>
+<li>Does not always work on Github.</li>
+<li>Cannot use org-mode link syntax to put <code><a href="#org-syntax">link</a></code> inside of a code block.</li>
+#+END_HTML
 
 **** HTML
 
