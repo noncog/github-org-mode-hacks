@@ -220,33 +220,10 @@ Org syntax is translated through org-ruby to pre tag. Here, org and HTML are ver
 
 **** Org-mode
 Syntax:
-#+BEGIN_HTML
-<pre>
-#+BEGIN_SRC
-<br>
-#+END_SRC
-<br>
-<br>
-or
-<br>
-<br>
-#+BEGIN_EXAMPLE
-<br>
-#+END_EXAMPLE
-</pre>
-#+END_HTML
+#+HTML:<pre>#+BEGIN_SRC<br>#+END_SRC<br><br>or<br><br>#+BEGIN_EXAMPLE<br>#+END_EXAMPLE</pre>
 
 Example:
-#+BEGIN_HTML
-<pre>
-#+BEGIN_SRC
-<br>
-Some code
-<br>
-More code
-#+END_SRC
-</pre>
-#+END_HTML
+#+HTML:<pre>#+BEGIN_SRC<br>Some code<br>More code#+END_SRC</pre>
 
 Result:
 #+BEGIN_SRC
