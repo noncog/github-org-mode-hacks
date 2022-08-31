@@ -72,7 +72,7 @@ Example:
 #+HTML:<pre>#+BEGIN_HTML<br>&lt;div&gt;<br>&lt;p&gt;Some longer HTML!&lt;/p&gt;<br>&lt;/div&gt;<br>#+END_HTML</pre>
 
 ** Centering / Text Alignment
-#+HTML:<p>The HTML attribute <code><a href="https://www.geeksforgeeks.org/html-align-attribute/">align</a><code> controls text alignment, including centering.</p>
+#+HTML:<p>The HTML attribute <code><a href="https://www.geeksforgeeks.org/html-align-attribute/">align</a></code> controls text alignment, including centering.</p>
 
 Syntax:
 #+BEGIN_SRC
