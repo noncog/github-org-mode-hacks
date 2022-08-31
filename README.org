@@ -135,7 +135,7 @@ Syntax:
 #+END_SRC
 
 Example:
-#+HTML:<pre>#+BEGIN_HTML<br>&lt;details&gt;<br>&lt;summary&gt;Hidden Section - Click Me!&lt;summary&gt;<br>&lt;p&gt;Some hidden text&lt;/p&gt;<br>&lt;/details&gt;<br>#+END_HTML
+#+HTML:<pre>#+BEGIN_HTML<br>&lt;details&gt;<br>&lt;summary&gt;Hidden Section - Click Me!&lt;summary&gt;<br>&lt;p&gt;Some hidden text&lt;/p&gt;<br>&lt;/details&gt;<br>#+END_HTML</pre>
 *** Folding Org Syntax
 You can use HTML inline calls to start a fold and end it later. Including folding regular org syntax.
 
