@@ -168,7 +168,7 @@ You can use both HTML and org-mode to generate code blocks. Each have their appr
 =Looks like this.=
 
 I use these to highlight commands and software where appropriate.
-**** Org Syntax
+**** Org-mode
 
 Syntax:
 #+BEGIN_SRC
@@ -214,5 +214,64 @@ Disadvantages:
 - Not quick to use.
 
 *** Block
-**** Org Syntax
+#+HTML:<p>GitHub and org-ruby honor the <code><a href="https://www.w3schools.com/tags/tag_pre.asp">pre</a></code> tag for code blocks.</p>
+
+Org syntax is translated through org-ruby to pre tag. Here, org and HTML are very equivalent, except for one disadvantage shown below.
+
+**** Org-mode
+Syntax:
+#+BEGIN_HTML
+<pre>
+#+BEGIN_SRC
+<br>
+#+END_SRC
+<br>
+<br>
+or
+<br>
+<br>
+#+BEGIN_EXAMPLE
+<br>
+#+END_EXAMPLE
+</pre>
+#+END_HTML
+
+Example:
+#+BEGIN_HTML
+<pre>
+#+BEGIN_SRC
+<br>
+Some code
+<br>
+More code
+#+END_SRC
+</pre>
+#+END_HTML
+
+Result:
+#+BEGIN_SRC
+Some code
+More code
+#+END_SRC
+
+Advantages:
+- Can write any language, except..
+
+Disadvantages:
+- Cannot write org-mode syntax inside.
+
 **** HTML
+Syntax:
+#+BEGIN_SRC
+<pre>some HTML</pre>
+#+END_SRC
+
+Example:
+#+HTML:<pre>#+HTML:&lt;pre&gt;Some HTML or org-syntax: #+BEGIN_SRC&lt;/pre&gt;<br>#+BEGIN_HTML<br>&lt;pre&gt;<br>Some HTML<br>&lt;/pre&gt;<br>#+END_HTML</pre>
+
+Advantages:
+- The inline HTML org syntax can use org syntax in the code block.
+
+Disadvantages:
+- Not easy to use.
+- To Write HTML inside an HTML code block, you must replace the tag brackets (< >) with &lt; and &gt; (&lt;a tag element&gt;).
