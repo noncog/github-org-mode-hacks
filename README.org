@@ -17,7 +17,7 @@ This document covers methods to use org-mode and HTML together. The headings are
 - [[#html-in-org-documents][HTML in Org Documents]]
 - [[#centering--text-alignment][Centering / Text Alignment]]
 - [[#underlining-1][Underlining]]
-- [[#folding][Folding]]
+- [[#folding-1][Folding]]
 
 ** Background
 GitHub uses [[https://github.com/wallyqs/org-ruby][org-ruby]] to parse and export an org document as HTML, then it is sanitized using their [[https://github.com/gjtorikian/html-pipeline/blob/main/lib/html/pipeline/sanitization_filter.rb][HTML-pipeline]].
