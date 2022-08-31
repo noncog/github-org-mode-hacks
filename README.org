@@ -136,3 +136,14 @@ Syntax:
 
 Example:
 #+HTML:<pre>#+BEGIN_HTML<br>&lt;details&gt;<br>&lt;summary&gt;Hidden Section - Click Me!&lt;summary&gt;<br>&lt;p&gt;Some hidden text&lt;/p&gt;<br>&lt;/details&gt;<br>#+END_HTML
+*** Folding Org Syntax
+You can use HTML inline calls to start a fold and end it later. Including folding regular org syntax.
+
+#+HTML:<pre>#+HTML:&lt;details&gt;<br>#+HTML:&lt;summary&gt;&lt;b&gt;A Hidden Section - Click Me!&lt;/b&gt;&lt;/summary&gt;<br>* Org Heading<br>  Some text.<br>#+HTML:&lt;/details&gt;
+
+Result:
+#+HTML:<details>
+#+HTML:<summary><b>A Hidden Section - Click Me!</b></summary>
+**** Org Heading
+Some text.
+#+HTML:</details>
