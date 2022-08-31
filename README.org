@@ -139,7 +139,7 @@ Example:
 *** Folding Org Syntax
 You can use HTML inline calls to start a fold and end it later. Including folding regular org syntax.
 
-#+HTML:<pre>#+HTML:&lt;details&gt;<br>#+HTML:&lt;summary&gt;&lt;b&gt;A Hidden Section - Click Me!&lt;/b&gt;&lt;/summary&gt;<br>* Org Heading<br>  Some text.<br>#+HTML:&lt;/details&gt;<pre>
+#+HTML:<pre>#+HTML:&lt;details&gt;<br>#+HTML:&lt;summary&gt;&lt;b&gt;A Hidden Section - Click Me!&lt;/b&gt;&lt;/summary&gt;<br>* Org Heading<br>  Some text.<br>#+HTML:&lt;/details&gt;</pre>
 
 Result:
 #+HTML:<details>
