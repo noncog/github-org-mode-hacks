@@ -251,4 +251,4 @@ Advantages:
 
 Disadvantages:
 - Not easy to use.
-- To Write HTML inside an HTML code block, you must replace the tag brackets (< >) with &lt; and &gt; (&lt;a tag element&gt;).
+- To Write HTML inside an HTML code block, you must replace the tag brackets (< >) with &lt; and &gt; (&lt;tag element&gt;).
