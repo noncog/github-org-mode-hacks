@@ -216,14 +216,14 @@ Disadvantages:
 *** Block
 #+HTML:<p>GitHub and org-ruby honor the <code><a href="https://www.w3schools.com/tags/tag_pre.asp">pre</a></code> tag for code blocks.</p>
 
-Org syntax is translated through org-ruby to pre tag. Here, org and HTML are very equivalent, except for one disadvantage shown below.
+Org syntax is translated through org-ruby to the pre tag. Here, org and HTML are very equivalent, except for one disadvantage shown below.
 
 **** Org-mode
 Syntax:
 #+HTML:<pre>#+BEGIN_SRC<br>#+END_SRC<br><br>or<br><br>#+BEGIN_EXAMPLE<br>#+END_EXAMPLE</pre>
 
 Example:
-#+HTML:<pre>#+BEGIN_SRC<br>Some code<br>More code#+END_SRC</pre>
+#+HTML:<pre>#+BEGIN_SRC<br>Some code<br>More code<br>#+END_SRC</pre>
 
 Result:
 #+BEGIN_SRC
@@ -244,7 +244,7 @@ Syntax:
 #+END_SRC
 
 Example:
-#+HTML:<pre>#+HTML:&lt;pre&gt;Some HTML or org-syntax: #+BEGIN_SRC&lt;/pre&gt;<br>#+BEGIN_HTML<br>&lt;pre&gt;<br>Some HTML<br>&lt;/pre&gt;<br>#+END_HTML</pre>
+#+HTML:<pre>#+HTML:&lt;pre&gt;Some HTML or org-syntax: #+BEGIN_SRC&lt;/pre&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;pre&gt;<br>Some HTML<br>&lt;/pre&gt;<br>#+END_HTML</pre>
 
 Advantages:
 - The inline HTML org syntax can use org syntax in the code block.
