@@ -204,7 +204,7 @@ Example:
 #+HTML:<pre>#+HTML:&lt;code&gt;some text&lt;/code&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;p&gt;This is an inline code with a &lt;code&gt;&lt;a href=""#html"&gt;link&lt;/a&gt;&lt;/code&gt;!&lt;/p&gt;<br>#+END_HTML</pre>
 
 Result:
-#+HTML:<p>This is an inline code block with a <a href="#html">link</a>!</p>
+#+HTML:<p>This is an inline code block with a <code><a href="#html">link</a></code>!</p>
 
 Advantages:
 - More universal.
