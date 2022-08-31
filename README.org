@@ -141,7 +141,6 @@ Syntax:
 Example:
 #+HTML:<div align="center">
 #+BEGIN_SRC
-
                  uuuuuuu
              uu$$$$$$$$$$$uu
           uu$$$$$$$$$$$$$$$$$uu
