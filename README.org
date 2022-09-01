@@ -7,8 +7,6 @@ Sharing the undocumented things you can do with GitHub, org-mode, and HTML to ma
 
 #+BEGIN_EXAMPLE :exports none
 TODO:
-Images
-Shields
 Warnings
 Notes
 Emojis
@@ -347,6 +345,17 @@ Example:
 Result:
 #+HTML:<a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
 
-
 Tip:
 I like to center my shields by enclosing it in a paragraph tag with an alignment attribute.
+
+** Emojis
+The only way to use emojis an org document on GitHub is through HTML.
+
+1. Find the GitHub emoji you want to use.
+2. Use the syntax :emoji_name: anywhere in a text field and the emoji will show up!
+
+Example:
+#+HTML:<pre>#+HTML:&lt;p&gt;Here is an emoji: :satisfied:&lt;/p&gt;</pre>
+
+Result:
+#+HTML:<p>Here is an emoji: :satisfied:</p>
