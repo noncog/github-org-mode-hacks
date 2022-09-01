@@ -148,7 +148,7 @@ Some text.
 Centering org syntax includes the centering of org-tables.
 
 Example:
-#+HTML:<pre>#+HTML:&lt;div align="center"&gt;<br>| org | table |<br>| foo |  bar  |<br>#+HTML:&lt;/div&gt;</pre>
+#+HTML:<pre>#+HTML:&lt;div align="center"&gt;<br>| org | table |<br>| foo | bar  |<br>#+HTML:&lt;/div&gt;</pre>
 
 Result:
 #+HTML:<div align="center">
