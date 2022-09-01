@@ -4,6 +4,22 @@
 #+HTML:<div align="center">
 Sharing the undocumented things you can do with GitHub, org-mode, and HTML to make a better README.
 #+HTML:</div>
+
+#+BEGIN_EXAMPLE :exports none
+TODO:
+Tables
+Images
+Shields
+Warnings
+Notes
+Emojis
+Linking
+LaTeX and Mathematical Expressions
+No Web
+No Export/Hiding things
+- using HTML and no export
+#+END_EXAMPLE
+
 ** Why?
 The README, is your primary method to portray information about a repository to the reader. GitHub supports using =org-mode= to create a README, but it's implementation using =org-ruby= neither works as claimed nor is complete.
 
@@ -128,6 +144,18 @@ Result:
 **** Org Heading
 Some text.
 #+HTML:</div>
+*** Centering Org Tables
+Centering org syntax includes the centering of org-tables.
+
+Example:
+#+HTML:<pre>#+HTML:&lt;div align="center"&gt;<br>| org | table |<br>| foo |  bar  |<br>#+HTML:&lt;/div&gt;</pre>
+
+Result:
+#+HTML:<div align="center">
+| org | table |
+| foo | bar   |
+#+HTML:</div>
+
 *** Centering Code Blocks
 It's also possible to center the text inside of a code block, not the block itself.
 
@@ -279,18 +307,18 @@ Advantages:
 Disadvantages:
 - Not easy to use.
 - To Write HTML inside an HTML code block, you must replace the tag brackets (< >) with &lt; and &gt; (&lt;tag element&gt;).
+** Tables
+Org-ruby translates org tables to HTML just fine, but has some shortcomings.
 
+For regular tables, this is the faster and simpler approach.
 
-#+BEGIN_EXAMPLE :exports none
-TODO:
-Tables
-Images
-Shields
-Warnings
-Notes
-Emojis
-Linking
-No Web
-No Export/Hiding things
-- using HTML and no export
-#+END_EXAMPLE
+If your only table customization goal is to center it, refer to [[#centering-org-tables][centering org tables]] above!
+
+For more advanced formatting you may want an HTML table, which allows you to take advantage of aligning and other formatting.
+*** HTML Tables From Org Tables.
+Generate your table using org-mode, since it's quick and easy compared to writing an HTML table, and then export the table using the following technique.
+
+1. Create your org table.
+2. Use the command: org-html-export-as-html to export the current org document buffer to an HTML buffer.
+3. Copy the HTML table into an HTML block in your org document, replacing the org table.
+4. Apply any additional HTML formatting to your table.
