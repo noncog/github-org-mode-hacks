@@ -330,6 +330,8 @@ The only way to put shields in an org document is through HTML.
 
 Here is the most used website to generate shields: [[https://shields.io/][shields.io]]
 
+Just use the URL generated as the source for an image tag.
+
 Syntax:
 #+BEGIN_SRC
 Without link:
