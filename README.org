@@ -322,3 +322,28 @@ Generate your table using org-mode, since it's quick and easy compared to writin
 2. Use the command: org-html-export-as-html to export the current org document buffer to an HTML buffer.
 3. Copy the HTML table into an HTML block in your org document, replacing the org table.
 4. Apply any additional HTML formatting to your table.
+
+** Shields
+Shields are the little badges found on repositories all over GitHub to quickly and visually share information about the repository to the reader.
+
+The only way to put shields in an org document is through HTML.
+
+Here is the most used website to generate shields: [[https://shields.io/][shields.io]]
+
+Syntax:
+#+BEGIN_SRC
+Without link:
+<img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white">
+
+With link:
+<a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
+#+END_SRC
+
+Example:
+#+HTML:<pre>#+HTML:&lt;a href="https://orgmode.org"&gt;&lt;img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"&gt;&lt;/a&gt;</pre>
+
+Result:
+#+HTML:<a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
+
+Tip:
+I like to center my shields by enclosing it in a paragraph tag with an alignment attribute.
