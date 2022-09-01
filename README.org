@@ -7,7 +7,6 @@ Sharing the undocumented things you can do with GitHub, org-mode, and HTML to ma
 
 #+BEGIN_EXAMPLE :exports none
 TODO:
-Tables
 Images
 Shields
 Warnings
@@ -38,6 +37,7 @@ This document covers methods to use org-mode and HTML together. The headings are
 - [[#code][Code]]
   - [[#inline-1][Inline]]
   - [[#block-1][Block]]
+- [[#tables][Tables]]
 
 ** Background
 GitHub uses [[https://github.com/wallyqs/org-ruby][org-ruby]] to parse and export an org document as HTML, then it is sanitized using their [[https://github.com/gjtorikian/html-pipeline/blob/main/lib/html/pipeline/sanitization_filter.rb][HTML-pipeline]].
