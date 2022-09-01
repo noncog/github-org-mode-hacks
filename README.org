@@ -347,5 +347,6 @@ Example:
 Result:
 #+HTML:<a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
 
+
 Tip:
 I like to center my shields by enclosing it in a paragraph tag with an alignment attribute.
