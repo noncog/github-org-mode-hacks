@@ -8,13 +8,36 @@ Sharing the undocumented things you can do with GitHub, org-mode, and HTML to ma
 #+BEGIN_EXAMPLE :exports none
 TODO:
 Warnings
+Captions
 Notes
-Emojis
-Linking
 LaTeX and Mathematical Expressions
 No Web
 No Export/Hiding things
+
+
+GitHub now supports LaTeX syntax
+
+Flesh out this section for math support...
+
 - using HTML and no export
+
+
+making custom svg
+
+html <warning>
+
+html <kbd> elements
+
+href images can be aligned to center and left and right
+can be used to have text on left and images on the right
+
+What is this example block!
+https://gist.github.com/ChrisTollefson/a3af6d902a74a0afd1c2d79aadc9bb3f
+
+Need to probably refromat or teach how to do this.
+
+I could use this for the syntax being shown in two different languages.
+Is essentially a code block inside of a table.
 #+END_EXAMPLE
 
 ** Why?
