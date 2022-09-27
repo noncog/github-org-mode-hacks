@@ -1,11 +1,11 @@
-#+HTML:<h1 align="center">GitHub README.org Hacks</h1>
-#+HTML: <p align="center"><a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"> </a><a href="https://www.gnu.org/software/emacs/"><img src="https://img.shields.io/badge/Made_with-Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a></p>
+#+html:<h1 align="center">GitHub README.org Hacks</h1>
+#+html: <p align="center"><a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"> </a><a href="https://www.gnu.org/software/emacs/"><img src="https://img.shields.io/badge/Made_with-Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a></p>
 
-#+HTML:<div align="center">
+#+html:<div align="center">
 Sharing the undocumented things you can do with GitHub, org-mode, and HTML to make a better README.
 #+HTML:</div>
 
-#+BEGIN_EXAMPLE :exports none
+#+begin_example :exports none
 TODO:
 Warnings
 Captions
@@ -14,13 +14,13 @@ LaTeX and Mathematical Expressions
 No Web
 No Export/Hiding things
 
+Add quoting
 
 GitHub now supports LaTeX syntax
 
 Flesh out this section for math support...
 
 - using HTML and no export
-
 
 making custom svg
 
@@ -38,7 +38,7 @@ Need to probably refromat or teach how to do this.
 
 I could use this for the syntax being shown in two different languages.
 Is essentially a code block inside of a table.
-#+END_EXAMPLE
+#+end_example
 
 ** Why?
 The README, is your primary method to portray information about a repository to the reader. GitHub supports using =org-mode= to create a README, but it's implementation using =org-ruby= neither works as claimed nor is complete.
@@ -73,9 +73,9 @@ The problem with this, is that the translations used by GitHub/org-ruby are inco
 
 The point is, that most things you can do with org-mode are supported, but some things are not. For example, headings are translated directly to HTML heading tags (<h1>,<h2>,etc.), tables are translated to table tags (<table>), etc.
 
-#+HTML:<p><ins>However, the following do not work correctly and must be fixed using HTML:</ins></p>
+#+html:<p><ins>However, the following do not work correctly and must be fixed using HTML:</ins></p>
 **** Centering
-#+HTML:<p>Org-mode's <code>#+BEGIN_CENTER</code> and <code>#+END_CENTER</code> syntax are translated to <code>&lt;div&gt;</code> but it's missing the <code>align="center"</code> attribute.
+#+html:<p>Org-mode's <code>#+begin_center</code> and <code>#+end_center</code> syntax are translated to <code>&lt;div&gt;</code> but it's missing the <code>align="center"</code> attribute.
 
 **** Underlining
 Org-mode's underline syntax =_text_= is translated to ~<span style=\"text-decoration:underline;\>~ which is incorrect and not honored by GitHub.
@@ -84,7 +84,7 @@ Org-mode's underline syntax =_text_= is translated to ~<span style=\"text-decora
 In general this is missing from org-mode, a feature that markdown has and "we" don't.
 
 ** HTML in Org Documents
-#+HTML:<p align="center">Welcome our Lord and Savior, HTML!</p>
+#+html:<p align="center">Welcome our Lord and Savior, HTML!</p>
 
 Although this is our primary method of overcoming the limitations of org-ruby and GitHub, it should be noted that HTML offers us so much more than just fixing org-ruby's shortcomings.
 
@@ -93,9 +93,9 @@ Org-mode supports the use of two syntaxes for writing HTML in a document.
 Useful for one-liners.
 
 Syntax:
-#+BEGIN_SRC
-#+HTML:
-#+END_SRC
+#+begin_src
+#+html:
+#+end_src
 
 Example:
 #+BEGIN_SRC
@@ -106,10 +106,10 @@ Example:
 Useful for complex or multi-line HTML.
 
 Syntax:
-#+HTML:<pre>#+BEGIN_HTML<br>#+END_HTML</pre>
+#+html:<pre>#+begin_html<br>#+end_html</pre>
 
 Example:
-#+HTML:<pre>#+BEGIN_HTML<br>&lt;div&gt;<br>&lt;p&gt;Some longer HTML!&lt;/p&gt;<br>&lt;/div&gt;<br>#+END_HTML</pre>
+#+html:<pre>#+begin_html<br>&lt;div&gt;<br>&lt;p&gt;Some longer HTML!&lt;/p&gt;<br>&lt;/div&gt;<br>#+end_html</pre>
 
 *** Advice
 Use HTML comments to organize sections in large HTML blocks.
@@ -117,67 +117,67 @@ Use HTML comments to organize sections in large HTML blocks.
 The wording in the comment tag can be formatted any way you choose.
 
 Syntax:
-#+BEGIN_SRC
+#+begin_src
 <!-- SECTION:START -->
 Some HTML
 <!-- SECTION:END -->
-#+END_SRC
+#+end_src
 
 Example:
-#+HTML:<pre>#+BEGIN_HTML<br>&lt;!-- SECTION:START --&gt;<br>Some HTML<br>&lt;!-- SECTION:END --&gt;<br><br>&lt;!-- OTHER_SECTION:START --&gt;<br>Some HTML<br>&lt;!-- OTHER_SECTION:END --&gt;<br>#+HTML_END</pre>
+#+html:<pre>#+begin_html<br>&lt;!-- SECTION:START --&gt;<br>Some HTML<br>&lt;!-- SECTION:END --&gt;<br><br>&lt;!-- OTHER_SECTION:START --&gt;<br>Some HTML<br>&lt;!-- OTHER_SECTION:END --&gt;<br>#+html_end</pre>
 
 ** Centering / Text Alignment
-#+HTML:<p>The HTML attribute <code><a href="https://www.geeksforgeeks.org/html-align-attribute/">align</a></code> controls text alignment, including centering.</p>
+#+html:<p>The HTML attribute <code><a href="https://www.geeksforgeeks.org/html-align-attribute/">align</a></code> controls text alignment, including centering.</p>
 
 Syntax:
-#+BEGIN_SRC
+#+begin_src
 <element align="center">
 Some stuff
 </element>
-#+END_SRC
+#+end_src
 
 Example:
-#+HTML:<pre>#+HTML:&lt;div align="center"&gt;some centered stuff&lt;/div&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;div align="center"&gt;<br>some centered stuff<br>&lt;/div&gt;<br>#+END_HTML</pre>
+#+html:<pre>#+html:&lt;div align="center"&gt;some centered stuff&lt;/div&gt;<br><br>or<br><br>#+begin_html<br>&lt;div align="center"&gt;<br>some centered stuff<br>&lt;/div&gt;<br>#+end_html</pre>
 The centering attribute can be applied to many tags, but I recommend keeping it simple.
 
 Recommended tags:
-#+BEGIN_EXAMPLE
+#+begin_example
 <div> <-- Recommended over <p>, as it works more often.
 <p>
-#+END_EXAMPLE
+#+end_example
 
 Wrapping any other tags in these results in them being centered, regardless if they can accept the alignment attribute themselves.
 
 Alignment options:
-#+BEGIN_EXAMPLE
+#+begin_example
 left
 right
 center
 justify
-#+END_EXAMPLE
+#+end_example
 
 *** Centering Org Syntax
 You can use HTML inline calls to start a center alignment and end it later.
 
 Example:
-#+HTML:<pre>#+HTML:&lt;div align="center"&gt;<br>* Org Heading<br>  Some text.<br>#+HTML:&lt;/div&gt;</pre>
+#+html:<pre>#+html:&lt;div align="center"&gt;<br>* Org Heading<br>  Some text.<br>#+html:&lt;/div&gt;</pre>
 
 Result:
-#+HTML:<div align="center">
+#+html:<div align="center">
 **** Org Heading
 Some text.
-#+HTML:</div>
+#+html:</div>
 *** Centering Org Tables
 Centering org syntax includes the centering of org-tables.
 
 Example:
-#+HTML:<pre>#+HTML:&lt;div align="center"&gt;<br>| org | table |<br>| foo | bar  |<br>#+HTML:&lt;/div&gt;</pre>
+#+html:<pre>#+html:&lt;div align="center"&gt;<br>| org | table |<br>| foo | bar  |<br>#+html:&lt;/div&gt;</pre>
 
 Result:
-#+HTML:<div align="center">
+#+html:<div align="center">
 | org | table |
 | foo | bar   |
-#+HTML:</div>
+#+html:</div>
 
 *** Centering Code Blocks
 It's also possible to center the text inside of a code block, not the block itself.
@@ -187,58 +187,58 @@ This is useful for posting ASCII art to your README.
 Just use the div centering syntax on a code block. Either all in one or using starting the centering with an HTML inline call and closing it later, like in the previous example.
 
 Syntax:
-#+HTML:<pre>#+HTML:&lt;div align="center"&gt;<br>HTML or org code block<br>&lt;/div&gt;<br>&lt;/pre&gt;<br><br>or<br><br>#+HTML:&lt;div align="center"&gt;<br>#+BEGIN_SRC<br>ASCII Art<br>#+END_SRC<br>#+HTML:&lt;/div&gt;</pre>
+#+html:<pre>#+html:&lt;div align="center"&gt;<br>HTML or org code block<br>&lt;/div&gt;<br>&lt;/pre&gt;<br><br>or<br><br>#+html:&lt;div align="center"&gt;<br>#+begin_src<br>ASCII Art<br>#+end_src<br>#+html:&lt;/div&gt;</pre>
 
 Example:
-#+HTML:<div align="center">
-#+BEGIN_SRC
+#+html:<div align="center">
+#+begin_src
  /~~~\/~~\/~~~\/~~~\/~~\/~~~\                    /~~~\/~~\/~~~\/~~~\/~~\/~~~\
  | /\/ /\/ /\ || /\/ /\/ /\ |                    | /\ \/\ \/\ || /\ \/\ \/\ |
  \ \/ /\/ /\/ /\ \/ /\/ /\/ /                    \ \/\ \/\ \/ /\ \/\ \/\ \/ /
   \ \/\ \/\ \/  \ \/\ \/\ \/                      \/ /\/ /\/ /  \/ /\/ /\/ /
 ,_/\ \/\ \/\ \__/\ \/\ \/\ \______________________/ /\/ /\/ /\__/ /\/ /\/ /\_,
 (__/\__/\__/\____/\__/\__/\________________________/\__/\__/\____/\__/\__/\__)
-#+END_SRC
-#+HTML:</div>
+#+end_src
+#+html:</div>
 
 ** Underlining
-#+HTML:<p>Github honors the <code><a href="https://www.w3schools.com/TAGs/tag_ins.asp">insert</a></code> tag for underlining. Even though it's not specifically for underlining, it gets the job done.</p>
+#+html:<p>Github honors the <code><a href="https://www.w3schools.com/TAGs/tag_ins.asp">insert</a></code> tag for underlining. Even though it's not specifically for underlining, it gets the job done.</p>
 
 Syntax:
-#+BEGIN_SRC
+#+begin_src
 <ins>
 </ins>
-#+END_SRC
+#+end_src
 
 Example:
-#+HTML:<pre>#+HTML:&lt;ins&gt;some underlined text&lt;/ins&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;ins&gt;<br>some underlined text<br>&lt;/ins&gt;<br>#+END_HTML</pre>
-#+HTML:<caption>Result:</caption><br><ins>some underlined text</ins>
+#+html:<pre>#+html:&lt;ins&gt;some underlined text&lt;/ins&gt;<br><br>or<br><br>#+begin_html<br>&lt;ins&gt;<br>some underlined text<br>&lt;/ins&gt;<br>#+end_html</pre>
+#+html:<caption>Result:</caption><br><ins>some underlined text</ins>
 ** Folding
 This killer feature allows us to hide information in a fold. This is missing from org-mode, but fear not, HTML to the rescue.
 
-#+HTML:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_summary.asp">summary / details</a></code> tags for folding sections.</p>
+#+html:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_summary.asp">summary / details</a></code> tags for folding sections.</p>
 
 Syntax:
-#+BEGIN_SRC
+#+begin_src
 <details>
 <summary>The title text or heading of our fold</summary>
 <p>Some hidden text</p>
 </details>
-#+END_SRC
+#+end_src
 
 Example:
-#+HTML:<pre>#+BEGIN_HTML<br>&lt;details&gt;<br>&lt;summary&gt;Hidden Section - Click Me!&lt;summary&gt;<br>&lt;p&gt;Some hidden text&lt;/p&gt;<br>&lt;/details&gt;<br>#+END_HTML</pre>
+#+html:<pre>#+begin_html<br>&lt;details&gt;<br>&lt;summary&gt;Hidden Section - Click Me!&lt;summary&gt;<br>&lt;p&gt;Some hidden text&lt;/p&gt;<br>&lt;/details&gt;<br>#+end_html</pre>
 *** Folding Org Syntax
 You can use HTML inline calls to start a fold and end it later. Including folding regular org syntax.
 
-#+HTML:<pre>#+HTML:&lt;details&gt;<br>#+HTML:&lt;summary&gt;&lt;b&gt;A Hidden Section - Click Me!&lt;/b&gt;&lt;/summary&gt;<br>* Org Heading<br>  Some text.<br>#+HTML:&lt;/details&gt;</pre>
+#+html:<pre>#+html:&lt;details&gt;<br>#+html:&lt;summary&gt;&lt;b&gt;A Hidden Section - Click Me!&lt;/b&gt;&lt;/summary&gt;<br>* Org Heading<br>  Some text.<br>#+html:&lt;/details&gt;</pre>
 
 Result:
-#+HTML:<details>
-#+HTML:<summary><b>A Hidden Section - Click Me!</b></summary>
+#+html:<details>
+#+html:<summary><b>A Hidden Section - Click Me!</b></summary>
 **** Org Heading
 Some text.
-#+HTML:</details>
+#+html:</details>
 ** Code
 You can use both HTML and org-mode to generate code blocks. Each have their appropriate use cases.
 *** Inline
@@ -248,7 +248,7 @@ I use these to highlight commands and software where appropriate.
 **** Org-mode
 
 Syntax:
-#+BEGIN_SRC
+#+begin_src
 Verbatim:
 =SOME INFO= <-- My first choice.
 
@@ -256,33 +256,33 @@ or
 
 Code:
 ~SOME INFO~ <-- Useful if text inside has an equal sign.
-#+END_SRC
+#+end_src
 
 Advantages:
 - Useful for quick inline highlighting.
 - Text in these strings is not processed for org specific syntax.
 
 Disadvantages:
-#+BEGIN_HTML
+#+begin_html
 <ul>
 <li>Does not always work on Github.</li>
 <li>Cannot use org-mode link syntax to put a <code><a href="#org-syntax">link</a></code> inside of a code block.</li>
 </ul>
-#+END_HTML
+#+end_html
 
 **** HTML
-#+HTML:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_code.asp">code</a></code> tag for inline code blocks.</p>
+#+html:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_code.asp">code</a></code> tag for inline code blocks.</p>
 
 Syntax:
-#+BEGIN_SRC
+#+begin_src
 <code>some text</code>
-#+END_SRC
+#+end_src
 
 Example:
-#+HTML:<pre>#+HTML:&lt;code&gt;some text&lt;/code&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;p&gt;This is an inline code with a &lt;code&gt;&lt;a href=""#html"&gt;link&lt;/a&gt;&lt;/code&gt;!&lt;/p&gt;<br>#+END_HTML</pre>
+#+html:<pre>#+html:&lt;code&gt;some text&lt;/code&gt;<br><br>or<br><br>#+begin_html<br>&lt;p&gt;This is an inline code with a &lt;code&gt;&lt;a href=""#html"&gt;link&lt;/a&gt;&lt;/code&gt;!&lt;/p&gt;<br>#+end_html</pre>
 
 Result:
-#+HTML:<p>This is an inline code block with a <code><a href="#html">link</a></code>!</p>
+#+html:<p>This is an inline code block with a <code><a href="#html">link</a></code>!</p>
 
 Advantages:
 - More universal.
@@ -292,37 +292,51 @@ Disadvantages:
 - Not quick to use.
 
 *** Block
-#+HTML:<p>GitHub and org-ruby honor the <code><a href="https://www.w3schools.com/tags/tag_pre.asp">pre</a></code> tag for code blocks.</p>
+#+html:<p>GitHub and org-ruby honor the <code><a href="https://www.w3schools.com/tags/tag_pre.asp">pre</a></code> tag for code blocks.</p>
 
 Org syntax is translated through org-ruby to the pre tag. Here, org and HTML are very equivalent, except for one disadvantage shown below.
 
 **** Org-mode
 Syntax:
-#+HTML:<pre>#+BEGIN_SRC<br>#+END_SRC<br><br>or<br><br>#+BEGIN_EXAMPLE<br>#+END_EXAMPLE</pre>
+#+begin_src
+,#+begin_src
+,#+end_src
+
+or
+
+,#+begin_example
+,#+end_example
+
+#+end_src
 
 Example:
-#+HTML:<pre>#+BEGIN_SRC<br>Some code<br>More code<br>#+END_SRC</pre>
-
-Result:
-#+BEGIN_SRC
+#+begin_src
+,#+begin_src
 Some code
 More code
-#+END_SRC
+,#+end_src
+#+end_src
+
+Result:
+#+begin_src
+Some code
+More code
+#+end_src
 
 Advantages:
-- Can write any language, except..
+- Can write any language, including org-mode syntax. Just prepend an org command with a comma.
 
 Disadvantages:
-- Cannot write org-mode syntax inside.
+- Cannot include org-mode links inside inside.
 
 **** HTML
 Syntax:
-#+BEGIN_SRC
+#+begin_src
 <pre>some HTML</pre>
-#+END_SRC
+#+end_src
 
 Example:
-#+HTML:<pre>#+HTML:&lt;pre&gt;Some code or org-syntax: #+BEGIN_SRC&lt;/pre&gt;<br><br>or<br><br>#+BEGIN_HTML<br>&lt;pre&gt;<br>Some code<br>&lt;/pre&gt;<br>#+END_HTML</pre>
+#+html:<pre>#+html:&lt;pre&gt;Some code or org-syntax: #+begin_src&lt;/pre&gt;<br><br>or<br><br>#+begin_html<br>&lt;pre&gt;<br>Some code<br>&lt;/pre&gt;<br>#+end_html</pre>
 
 Advantages:
 - The inline HTML org syntax can use org syntax in the code block.
@@ -356,19 +370,19 @@ Here is the most used website to generate shields: [[https://shields.io/][shield
 Just use the URL generated as the source for an image tag.
 
 Syntax:
-#+BEGIN_SRC
+#+begin_src
 Without link:
 <img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white">
 
 With link:
 <a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
-#+END_SRC
+#+end_src
 
 Example:
-#+HTML:<pre>#+HTML:&lt;a href="https://orgmode.org"&gt;&lt;img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"&gt;&lt;/a&gt;</pre>
+#+html:<pre>#+html:&lt;a href="https://orgmode.org"&gt;&lt;img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"&gt;&lt;/a&gt;</pre>
 
 Result:
-#+HTML:<a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
+#+html:<a href="https://orgmode.org"><img src="https://img.shields.io/badge/org-document-%2377aa99?style=flat-square&logo=org&logocolor=white"></a>
 
 Tip:
 I like to center my shields by enclosing it in a paragraph tag with an alignment attribute.
@@ -380,7 +394,7 @@ The only way to use emojis an org document on GitHub is through HTML.
 2. Use the syntax :emoji_name: anywhere in a text field and the emoji will show up!
 
 Example:
-#+HTML:<pre>#+HTML:&lt;p&gt;Here is an emoji: :satisfied:&lt;/p&gt;</pre>
+#+html:<pre>#+html:&lt;p&gt;Here is an emoji: :satisfied:&lt;/p&gt;</pre>
 
 Result:
-#+HTML:<p>Here is an emoji: :satisfied:</p>
+#+html:<p>Here is an emoji: :satisfied:</p>
