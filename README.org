@@ -6,38 +6,47 @@ Sharing the undocumented things you can do with GitHub, org-mode, and HTML to ma
 #+HTML:</div>
 
 #+begin_example :exports none
-TODO:
-Warnings
-Captions
-Notes
-LaTeX and Mathematical Expressions
-No Web
-No Export/Hiding things
+SECTIONS TO DO NEXT
+Hiding Information
+- Can be done using:
+- :exports none on example or source blocks.
+- I keep a private TODO list for this very repository here that you can't see!
 
-Add quoting
+Math Support
+- Needs fleshed out...
+- GitHub
+- HTML
+- Org
+- Latex
+  - GitHub now supports LaTeX syntax
 
-GitHub now supports LaTeX syntax
+NoWeb
+- Needs fleshed out...
 
-Flesh out this section for math support...
+Quoting
+- Centering block quote text
+  - #+HTML:<div align="center"><blockquote>centered block quote</blockquote></div>
+- Figure out other quoting possibilities.
 
-- using HTML and no export
+Org Commands in Code Blocks
+- Prepend the commands with , and then they'll magically work! Make this more explicit or give it's own section.
 
-making custom svg
+Making Custom SVGs
+- Needs fleshed out..
 
-html <warning>
+HTML
+- <warning>
+- <kbd>
+- Image alignment,
+  - Href images can be aligned to center and left and right
+  - Can be used to have text on left and images on the right
 
-html <kbd> elements
+Needs research
+- Captions
+- Notes
 
-href images can be aligned to center and left and right
-can be used to have text on left and images on the right
-
-What is this example block!
+Implement things from here but for org:
 https://gist.github.com/ChrisTollefson/a3af6d902a74a0afd1c2d79aadc9bb3f
-
-Need to probably refromat or teach how to do this.
-
-I could use this for the syntax being shown in two different languages.
-Is essentially a code block inside of a table.
 #+end_example
 
 ** Why?
@@ -353,6 +362,8 @@ For regular tables, this is the faster and simpler approach.
 If your only table customization goal is to center it, refer to [[#centering-org-tables][centering org tables]] above!
 
 For more advanced formatting you may want an HTML table, which allows you to take advantage of aligning and other formatting.
+
+Unfortunately, GitHub does not honor Org's table alignment syntax when exporting it through org-ruby.
 *** HTML Tables From Org Tables.
 Generate your table using org-mode, since it's quick and easy compared to writing an HTML table, and then export the table using the following technique.
 
