@@ -324,6 +324,7 @@ More code
 #+end_src
 
 Advantages:
+- Quick to write.
 - Can write any language, including org-mode syntax. Just prepend an org command with a comma.
 
 Disadvantages:
