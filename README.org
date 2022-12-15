@@ -1,4 +1,4 @@
-#+html:<h1 align="center">GitHub README.org Hacks</h1>
+#+html:<h1 align="center">GitHub Org Mode Hacks</h1>
 #+html: <p align="center"><a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"> </a><a href="https://www.gnu.org/software/emacs/"><img src="https://img.shields.io/badge/Made_with-Emacs-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a></p>
 
 #+html:<div align="center">
@@ -11,6 +11,7 @@ Hiding Information
 - Can be done using:
 - :exports none on example or source blocks.
 - I keep a private TODO list for this very repository here that you can't see!
+- https://www.w3schools.com/TAGS/att_hidden.asp Potentiall hidden attribute.
 
 Math Support
 - Needs fleshed out...
@@ -82,7 +83,7 @@ The problem with this, is that the translations used by GitHub/org-ruby are inco
 
 The point is, that most things you can do with org-mode are supported, but some things are not. For example, headings are translated directly to HTML heading tags (<h1>,<h2>,etc.), tables are translated to table tags (<table>), etc.
 
-#+html:<p><ins>However, the following do not work correctly and must be fixed using HTML:</ins></p>
+#+html:<p><ins>However, at least the following do not work correctly and must be fixed using HTML:</ins></p>
 **** Centering
 #+html:<p>Org-mode's <code>#+begin_center</code> and <code>#+end_center</code> syntax are translated to <code>&lt;div&gt;</code> but it's missing the <code>align="center"</code> attribute.
 
@@ -97,7 +98,8 @@ In general this is missing from org-mode, a feature that markdown has and "we" d
 
 Although this is our primary method of overcoming the limitations of org-ruby and GitHub, it should be noted that HTML offers us so much more than just fixing org-ruby's shortcomings.
 
-Org-mode supports the use of two syntaxes for writing HTML in a document.
+Org-mode supports the use of two syntaxes for writing HTML in a document. The first is inline and the second is block.
+
 *** Inline
 Useful for one-liners.
 
@@ -108,7 +110,7 @@ Syntax:
 
 Example:
 #+BEGIN_SRC
-#+HTML:<p>Some HTML</p>
+#+html:<p>Some HTML paragraph</p>
 #+END_SRC
 
 *** Block
