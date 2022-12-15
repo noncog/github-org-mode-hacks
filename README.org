@@ -57,7 +57,7 @@ That's where these hacks come in, primarily using HTML, to get around these limi
 
 And, I haven't found anyone talking about these techniques, so I thought I would share them. Please consider submitting yours.
 ** Document Structure
-This document covers methods to use org-mode and HTML together. The headings are sorted by the goal we want to achieve, not by the method used to achieve it.
+This document covers methods to use org-mode and HTML together. The headings are sorted by the goal we want to achieve.
 
 ** Table of Contents
 - [[#background][Background]]
@@ -77,26 +77,20 @@ GitHub uses [[https://github.com/wallyqs/org-ruby][org-ruby]] to parse and expor
 
 These documents allow us to understand what you can and can't do using org-mode and HTML on GitHub, but that work is summarized for you here.
 *** org-ruby
-Through this, org-mode syntax is translated directly into HTML. The rules for translation are modifiable. See org-ruby for the default translation list.
+This software translates org-mode files/syntax directly into HTML. The rules for translation are modifiable. See org-ruby for the default translation list.
 
 The problem with this, is that the translations used by GitHub/org-ruby are incomplete. This can be fixed by including a YAML file, but we don't need another file in our repository just for formatting a README.
 
-The point is, that most things you can do with org-mode are supported, but some things are not. For example, headings are translated directly to HTML heading tags (<h1>,<h2>,etc.), tables are translated to table tags (<table>), etc.
+The point is, that most things you can do with org-mode are supported, but some things are not.
 
-#+html:<p><ins>However, at least the following do not work correctly and must be fixed using HTML:</ins></p>
-**** Centering
-#+html:<p>Org-mode's <code>#+begin_center</code> and <code>#+end_center</code> syntax are translated to <code>&lt;div&gt;</code> but it's missing the <code>align="center"</code> attribute.
-
-**** Underlining
-Org-mode's underline syntax =_text_= is translated to ~<span style=\"text-decoration:underline;\>~ which is incorrect and not honored by GitHub.
-
-**** Folding
-In general this is missing from org-mode, a feature that markdown has and "we" don't.
+#+html:<p><ins>At least the following do not work correctly and must be fixed using HTML:</ins></p>
+- Centering
+- Underlining
+- Folding
 
 ** HTML in Org Documents
-#+html:<p align="center">Welcome our Lord and Savior, HTML!</p>
 
-Although this is our primary method of overcoming the limitations of org-ruby and GitHub, it should be noted that HTML offers us so much more than just fixing org-ruby's shortcomings.
+Welcome our Lord and Savior, HTML! This is our primary method to cvercome the limitations of org-ruby and Github.
 
 Org-mode supports the use of two syntaxes for writing HTML in a document. The first is inline and the second is block.
 
@@ -122,23 +116,18 @@ Syntax:
 Example:
 #+html:<pre>#+begin_html<br>&lt;div&gt;<br>&lt;p&gt;Some longer HTML!&lt;/p&gt;<br>&lt;/div&gt;<br>#+end_html</pre>
 
-*** Advice
-Use HTML comments to organize sections in large HTML blocks.
-
-The wording in the comment tag can be formatted any way you choose.
-
-Syntax:
-#+begin_src
-<!-- SECTION:START -->
-Some HTML
-<!-- SECTION:END -->
-#+end_src
-
-Example:
-#+html:<pre>#+begin_html<br>&lt;!-- SECTION:START --&gt;<br>Some HTML<br>&lt;!-- SECTION:END --&gt;<br><br>&lt;!-- OTHER_SECTION:START --&gt;<br>Some HTML<br>&lt;!-- OTHER_SECTION:END --&gt;<br>#+html_end</pre>
-
 ** Centering / Text Alignment
 #+html:<p>The HTML attribute <code><a href="https://www.geeksforgeeks.org/html-align-attribute/">align</a></code> controls text alignment, including centering.</p>
+
+The centering attribute can be applied to many elements, but I recommend using one of the following elements.
+
+Wrapping any other tags in these results in them being centered, regardless if they can accept the alignment attribute themselves.
+
+Recommended tags:
+#+begin_example
+<div> <-- Recommended over <p>, as it works more often.
+<p>
+#+end_example
 
 Syntax:
 #+begin_src
@@ -149,15 +138,9 @@ Some stuff
 
 Example:
 #+html:<pre>#+html:&lt;div align="center"&gt;some centered stuff&lt;/div&gt;<br><br>or<br><br>#+begin_html<br>&lt;div align="center"&gt;<br>some centered stuff<br>&lt;/div&gt;<br>#+end_html</pre>
-The centering attribute can be applied to many tags, but I recommend keeping it simple.
 
-Recommended tags:
-#+begin_example
-<div> <-- Recommended over <p>, as it works more often.
-<p>
-#+end_example
-
-Wrapping any other tags in these results in them being centered, regardless if they can accept the alignment attribute themselves.
+Result:
+#+html:<div align="center"><p>some centered stuff</p></div>
 
 Alignment options:
 #+begin_example
@@ -195,10 +178,10 @@ It's also possible to center the text inside of a code block, not the block itse
 
 This is useful for posting ASCII art to your README.
 
-Just use the div centering syntax on a code block. Either all in one or using starting the centering with an HTML inline call and closing it later, like in the previous example.
+Just use the div centering syntax on a code block, like in the previous example.
 
 Syntax:
-#+html:<pre>#+html:&lt;div align="center"&gt;<br>HTML or org code block<br>&lt;/div&gt;<br>&lt;/pre&gt;<br><br>or<br><br>#+html:&lt;div align="center"&gt;<br>#+begin_src<br>ASCII Art<br>#+end_src<br>#+html:&lt;/div&gt;</pre>
+#+html:<pre>#+html:&lt;div align="center"&gt;<br>#+begin_src<br>ASCII Art<br>#+end_src<br>#+html:&lt;/div&gt;</pre>
 
 Example:
 #+html:<div align="center">
@@ -225,7 +208,7 @@ Example:
 #+html:<pre>#+html:&lt;ins&gt;some underlined text&lt;/ins&gt;<br><br>or<br><br>#+begin_html<br>&lt;ins&gt;<br>some underlined text<br>&lt;/ins&gt;<br>#+end_html</pre>
 #+html:<caption>Result:</caption><br><ins>some underlined text</ins>
 ** Folding
-This killer feature allows us to hide information in a fold. This is missing from org-mode, but fear not, HTML to the rescue.
+This killer feature allows us to hide information in a folded or hidden section.
 
 #+html:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_summary.asp">summary / details</a></code> tags for folding sections.</p>
 
