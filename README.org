@@ -62,6 +62,7 @@ This document covers methods to use org-mode and HTML together. The headings are
 ** Table of Contents
 - [[#background][Background]]
 - [[#html-in-org-documents][HTML in Org Documents]]
+- [[#hiding-org-headings-on-github][Hiding Org Headings on GitHub]]
 - [[#centering--text-alignment][Centering / Text Alignment]]
 - [[#underlining-1][Underlining]]
 - [[#folding-1][Folding]]
@@ -90,7 +91,7 @@ The point is, that most things you can do with org-mode are supported, but some 
 
 ** HTML in Org Documents
 
-Welcome our Lord and Savior, HTML! This is our primary method to cvercome the limitations of org-ruby and Github.
+Please welcome our lord and savior, HTML! This is our primary method to overcome the limitations of org-ruby and Github.
 
 Org-mode supports the use of two syntaxes for writing HTML in a document. The first is inline and the second is block.
 
@@ -103,9 +104,9 @@ Syntax:
 #+end_src
 
 Example:
-#+BEGIN_SRC
+#+begin_src
 #+html:<p>Some HTML paragraph</p>
-#+END_SRC
+#+end_src
 
 *** Block
 Useful for complex or multi-line HTML.
@@ -115,6 +116,18 @@ Syntax:
 
 Example:
 #+html:<pre>#+begin_html<br>&lt;div&gt;<br>&lt;p&gt;Some longer HTML!&lt;/p&gt;<br>&lt;/div&gt;<br>#+end_html</pre>
+
+** Hiding Org Headings on GitHub
+
+We can prevent headings from showing up on GitHub using a little known feature of org-ruby. This took me way too long to find from [[https://github.com/wallyqs/org-ruby/blob/master/spec/html_examples/export-tags.org][here]]. View the raw file [[https://raw.githubusercontent.com/wallyqs/org-ruby/master/spec/html_examples/export-tags.org][here]].
+
+By including the following at the top of our document, we can use the tag =noexport= or =exclude= on headings that we don't want to show up on GitHub!
+
+#+begin_example
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+TAGS: export noexport
+#+end_example
 
 ** Centering / Text Alignment
 #+html:<p>The HTML attribute <code><a href="https://www.geeksforgeeks.org/html-align-attribute/">align</a></code> controls text alignment, including centering.</p>
