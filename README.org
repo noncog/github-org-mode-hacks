@@ -64,11 +64,16 @@ This document covers methods to use org-mode and HTML together. The headings are
 - [[#html-in-org-documents][HTML in Org Documents]]
 - [[#hiding-org-headings-on-github][Hiding Org Headings on GitHub]]
 - [[#centering--text-alignment][Centering / Text Alignment]]
+  - [[#centering-org-syntax][Org Syntax]]
+  - [[#centering-org-tables][Org Tables]]
+  - [[#centering-code-blocks][Code Blocks]]
 - [[#underlining-1][Underlining]]
 - [[#folding-1][Folding]]
 - [[#code][Code]]
   - [[#inline-1][Inline]]
   - [[#block-1][Block]]
+- [[#examples][Examples]]
+- [[#hiding-code-and-example-blocks][Hiding Code and Example Blocks]]
 - [[#tables][Tables]]
 - [[#shields][Shields]]
 - [[#emojis][Emojis]]
@@ -78,16 +83,9 @@ GitHub uses [[https://github.com/wallyqs/org-ruby][org-ruby]] to parse and expor
 
 These documents allow us to understand what you can and can't do using org-mode and HTML on GitHub, but that work is summarized for you here.
 *** org-ruby
-This software translates org-mode files/syntax directly into HTML. The rules for translation are modifiable. See org-ruby for the default translation list.
+This software translates org-mode files/syntax directly into HTML. The rules for translation are currently not modifiable. See org-ruby for the default translation list.
 
-The problem with this, is that the translations used by GitHub/org-ruby are incomplete. This can be fixed by including a YAML file, but we don't need another file in our repository just for formatting a README.
-
-The point is, that most things you can do with org-mode are supported, but some things are not.
-
-#+html:<p><ins>At least the following do not work correctly and must be fixed using HTML:</ins></p>
-- Centering
-- Underlining
-- Folding
+The problem with this, is that the translations used by GitHub/org-ruby are incomplete or outdated. Most things you can do with org-mode are supported, but some things are not.
 
 ** HTML in Org Documents
 
@@ -104,7 +102,7 @@ Syntax:
 #+end_src
 
 Example:
-#+begin_src
+#+begin_src html
 #+html:<p>Some HTML paragraph</p>
 #+end_src
 
@@ -112,14 +110,23 @@ Example:
 Useful for complex or multi-line HTML.
 
 Syntax:
-#+html:<pre>#+begin_html<br>#+end_html</pre>
+#+begin_example
+#+begin_html
+#+end_html
+#+end_example
 
 Example:
-#+html:<pre>#+begin_html<br>&lt;div&gt;<br>&lt;p&gt;Some longer HTML!&lt;/p&gt;<br>&lt;/div&gt;<br>#+end_html</pre>
+#+begin_src html
+#+begin_html
+<div>
+<p>Some longer HTML!</p>
+</div>
+#+end_html
+#+end_src
 
 ** Hiding Org Headings on GitHub
 
-We can prevent headings from showing up on GitHub using a little known feature of org-ruby. This took me way too long to find from [[https://github.com/wallyqs/org-ruby/blob/master/spec/html_examples/export-tags.org][here]]. View the raw file [[https://raw.githubusercontent.com/wallyqs/org-ruby/master/spec/html_examples/export-tags.org][here]].
+We can prevent headings from showing up on GitHub using a little known feature of org-ruby.
 
 By including the following at the top of our document, we can use the tag =noexport= or =exclude= on headings that we don't want to show up on GitHub!
 
@@ -129,31 +136,19 @@ By including the following at the top of our document, we can use the tag =noexp
 #+TAGS: export noexport
 #+end_example
 
+This took me way too long to find from [[https://github.com/wallyqs/org-ruby/blob/master/spec/html_examples/export-tags.org][here]]. View the raw file [[https://raw.githubusercontent.com/wallyqs/org-ruby/master/spec/html_examples/export-tags.org][here]].
+
 ** Centering / Text Alignment
+This is unfortunately broken in org-ruby, so we use HTML.
+
 #+html:<p>The HTML attribute <code><a href="https://www.geeksforgeeks.org/html-align-attribute/">align</a></code> controls text alignment, including centering.</p>
 
-The centering attribute can be applied to many elements, but I recommend using one of the following elements.
-
-Wrapping any other tags in these results in them being centered, regardless if they can accept the alignment attribute themselves.
-
-Recommended tags:
-#+begin_example
-<div> <-- Recommended over <p>, as it works more often.
-<p>
-#+end_example
-
 Syntax:
-#+begin_src
-<element align="center">
+#+begin_src html
+<div align="center">
 Some stuff
-</element>
+</div>
 #+end_src
-
-Example:
-#+html:<pre>#+html:&lt;div align="center"&gt;some centered stuff&lt;/div&gt;<br><br>or<br><br>#+begin_html<br>&lt;div align="center"&gt;<br>some centered stuff<br>&lt;/div&gt;<br>#+end_html</pre>
-
-Result:
-#+html:<div align="center"><p>some centered stuff</p></div>
 
 Alignment options:
 #+begin_example
@@ -163,11 +158,42 @@ center
 justify
 #+end_example
 
+The centering attribute can be applied to many elements, but I recommend using one of the following elements.
+
+Recommended tags:
+#+begin_src html
+<div> <-- Recommended over <p>, as it works more often.
+<p>
+#+end_src
+
+Example:
+#+begin_src html
+#+html:<div align="center">some centered stuff</div>
+
+or
+
+#+begin_html
+<div align="center">
+some centered stuff
+</div>
+#+end_html
+#+end_src
+
+Result:
+#+html:<div align="center"><p>some centered stuff</p></div>
+
+Wrapping other tags in these results in them also being centered as well, regardless if they can accept the alignment attribute themselves. You'll see this in the next sections.
+
 *** Centering Org Syntax
 You can use HTML inline calls to start a center alignment and end it later.
 
 Example:
-#+html:<pre>#+html:&lt;div align="center"&gt;<br>* Org Heading<br>  Some text.<br>#+html:&lt;/div&gt;</pre>
+#+begin_src html
+#+html:<div align="center">
+,* Org Heading
+  Some text.
+#+html:</div>
+#+end_src
 
 Result:
 #+html:<div align="center">
@@ -178,7 +204,12 @@ Some text.
 Centering org syntax includes the centering of org-tables.
 
 Example:
-#+html:<pre>#+html:&lt;div align="center"&gt;<br>| org | table |<br>| foo | bar  |<br>#+html:&lt;/div&gt;</pre>
+#+begin_src html
+#+html:<div align="center">
+| org | table |
+| foo | bar   |
+#+html:</div>
+#+end_src
 
 Result:
 #+html:<div align="center">
@@ -194,7 +225,13 @@ This is useful for posting ASCII art to your README.
 Just use the div centering syntax on a code block, like in the previous example.
 
 Syntax:
-#+html:<pre>#+html:&lt;div align="center"&gt;<br>#+begin_src<br>ASCII Art<br>#+end_src<br>#+html:&lt;/div&gt;</pre>
+#+begin_src html
+,#+html:<div align="center">
+,#+begin_src
+ASCII Art
+,#+end_src
+,#+html:</div>
+#+end_src
 
 Example:
 #+html:<div align="center">
@@ -212,13 +249,24 @@ Example:
 #+html:<p>Github honors the <code><a href="https://www.w3schools.com/TAGs/tag_ins.asp">insert</a></code> tag for underlining. Even though it's not specifically for underlining, it gets the job done.</p>
 
 Syntax:
-#+begin_src
+#+begin_src html
 <ins>
 </ins>
 #+end_src
 
 Example:
-#+html:<pre>#+html:&lt;ins&gt;some underlined text&lt;/ins&gt;<br><br>or<br><br>#+begin_html<br>&lt;ins&gt;<br>some underlined text<br>&lt;/ins&gt;<br>#+end_html</pre>
+#+begin_src html
+,#+html:<ins>some underlined text</ins>
+
+or
+
+,#+begin_html
+<ins>
+some underlined text
+</ins>
+,#+end_html
+#+end_src
+
 #+html:<caption>Result:</caption><br><ins>some underlined text</ins>
 ** Folding
 This killer feature allows us to hide information in a folded or hidden section.
@@ -226,7 +274,7 @@ This killer feature allows us to hide information in a folded or hidden section.
 #+html:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_summary.asp">summary / details</a></code> tags for folding sections.</p>
 
 Syntax:
-#+begin_src
+#+begin_src html
 <details>
 <summary>The title text or heading of our fold</summary>
 <p>Some hidden text</p>
@@ -234,11 +282,25 @@ Syntax:
 #+end_src
 
 Example:
-#+html:<pre>#+begin_html<br>&lt;details&gt;<br>&lt;summary&gt;Hidden Section - Click Me!&lt;summary&gt;<br>&lt;p&gt;Some hidden text&lt;/p&gt;<br>&lt;/details&gt;<br>#+end_html</pre>
-*** Folding Org Syntax
-You can use HTML inline calls to start a fold and end it later. Including folding regular org syntax.
 
-#+html:<pre>#+html:&lt;details&gt;<br>#+html:&lt;summary&gt;&lt;b&gt;A Hidden Section - Click Me!&lt;/b&gt;&lt;/summary&gt;<br>* Org Heading<br>  Some text.<br>#+html:&lt;/details&gt;</pre>
+#+begin_src html
+#+begin_html
+<details>
+<summary>Hidden Section - Click Me!<summary>
+<p>Some hidden text</p>
+</details>
+#+end_html
+#+end_src
+
+*** Folding Org Syntax
+You can also use HTML inline calls to start a fold and end it later. Including folding regular org syntax.
+#+begin_src html
+#+html:<details>
+#+html:<summary><b>A Hidden Section - Click Me!</b></summary>
+,* Org Heading
+  Some text.
+#+html:</details>
+#+end_src
 
 Result:
 #+html:<details>
@@ -281,12 +343,20 @@ Disadvantages:
 #+html:<p>GitHub honors the <code><a href="https://www.w3schools.com/tags/tag_code.asp">code</a></code> tag for inline code blocks.</p>
 
 Syntax:
-#+begin_src
+#+begin_src html
 <code>some text</code>
 #+end_src
 
 Example:
-#+html:<pre>#+html:&lt;code&gt;some text&lt;/code&gt;<br><br>or<br><br>#+begin_html<br>&lt;p&gt;This is an inline code with a &lt;code&gt;&lt;a href=""#html"&gt;link&lt;/a&gt;&lt;/code&gt;!&lt;/p&gt;<br>#+end_html</pre>
+#+begin_src html
+#+html:<code>some text</code>
+
+or
+
+#+begin_html
+<p>This is an inline code with a <code><a href="#html">link</a></code>!</p>
+#+end_html
+#+end_src
 
 Result:
 #+html:<p>This is an inline code block with a <code><a href="#html">link</a></code>!</p>
@@ -301,7 +371,7 @@ Disadvantages:
 *** Block
 #+html:<p>GitHub and org-ruby honor the <code><a href="https://www.w3schools.com/tags/tag_pre.asp">pre</a></code> tag for code blocks.</p>
 
-Org syntax is translated through org-ruby to the pre tag. Here, org and HTML are very equivalent, except for one disadvantage shown below.
+Here, org and HTML are very equivalent, except for one disadvantage shown below.
 
 **** Org-mode
 Syntax:
@@ -339,12 +409,22 @@ Disadvantages:
 
 **** HTML
 Syntax:
-#+begin_src
+#+begin_src html
 <pre>some HTML</pre>
 #+end_src
 
 Example:
-#+html:<pre>#+html:&lt;pre&gt;Some code or org-syntax: #+begin_src&lt;/pre&gt;<br><br>or<br><br>#+begin_html<br>&lt;pre&gt;<br>Some code<br>&lt;/pre&gt;<br>#+end_html</pre>
+#+begin_src html
+#+html:<pre>Some code or org-syntax: #+begin_src</pre>
+
+or
+
+#+begin_html
+<pre>
+Some code
+</pre>
+#+end_html
+#+end_src
 
 Advantages:
 - The inline HTML org syntax can use org syntax in the code block.
@@ -352,6 +432,32 @@ Advantages:
 Disadvantages:
 - Not easy to use.
 - To Write HTML inside an HTML code block, you must replace the tag brackets (< >) with &lt; and &gt; (&lt;tag element&gt;).
+** Examples
+I use strictly use org-mode for examples. Here, org-ruby works flawlessly.
+
+*** Inline
+A little known feature is that org has an inline example block.
+
+Any line that begins with a colon (:) followed by a space becomes an example.
+
+Syntax:
+#+begin_example
+: some inline example
+#+end_example
+
+Result:
+: some inline example
+
+*** Block
+This is just a regular org example block. No different from a code block except that it doesn't have syntax highlighting.
+
+Syntax:
+#+begin_example
+,#+begin_example
+,#+end_example
+#+end_example
+** Hiding Code and Example Blocks
+To prevent these from showing up on GitHub simply add =:exports none= to the =#+begin= statement for the block.
 ** Tables
 Org-ruby translates org tables to HTML just fine, but has some shortcomings.
 
@@ -371,7 +477,7 @@ Generate your table using org-mode, since it's quick and easy compared to writin
 4. Apply any additional HTML formatting to your table.
 
 ** Shields
-Shields are the little badges found on repositories all over GitHub to quickly and visually share information about the repository to the reader.
+Shields are the little badges found on repositories all over GitHub to quickly and visually share information about the repository.
 
 The only way to put shields in an org document is through HTML.
 
@@ -380,16 +486,18 @@ Here is the most used website to generate shields: [[https://shields.io/][shield
 Just use the URL generated as the source for an image tag.
 
 Syntax:
-#+begin_src
+#+begin_src html
 Without link:
-<img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white">
+<img src="image_url">
 
 With link:
-<a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
+<a href="hyperlink"><img src="image_url"></a>
 #+end_src
 
 Example:
-#+html:<pre>#+html:&lt;a href="https://orgmode.org"&gt;&lt;img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"&gt;&lt;/a&gt;</pre>
+#+begin_src html
+#+html:<a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-Document-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
+#+end_src
 
 Result:
 #+html:<a href="https://orgmode.org"><img src="https://img.shields.io/badge/org-document-%2377aa99?style=flat-square&logo=org&logocolor=white"></a>
@@ -398,13 +506,12 @@ Tip:
 I like to center my shields by enclosing it in a paragraph tag with an alignment attribute.
 
 ** Emojis
-The only way to use emojis an org document on GitHub is through HTML.
 
 1. Find the GitHub emoji you want to use.
 2. Use the syntax :emoji_name: anywhere in a text field and the emoji will show up!
 
 Example:
-#+html:<pre>#+html:&lt;p&gt;Here is an emoji: :satisfied:&lt;/p&gt;</pre>
+: :satisfied:
 
 Result:
-#+html:<p>Here is an emoji: :satisfied:</p>
+Here is an emoji: :satisfied:
