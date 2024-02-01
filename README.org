@@ -13,6 +13,25 @@ Hiding Information
 - I keep a private TODO list for this very repository here that you can't see!
 - https://www.w3schools.com/TAGS/att_hidden.asp Potentiall hidden attribute.
 
+- Different link types
+- search links, heading links, etc.
+- Finally, I solved internal and relative online linking. YOu have to use custom-ids like this: '[[#Org][Org Heading]]'
+
+- Can also hide a heading from export using COMMENT as the first word.
+- https://github.com/wallyqs/org-ruby/blob/master/spec/html_examples/comment-trees.org
+
+- Possibly do something with this:
+https://github.com/wallyqs/org-ruby/blob/7a28c2e6e91cdaceb1fddc2d870f4458632816e8/spec/html_examples/custom-seq-todo.org
+Definitions:
+- https://github.com/wallyqs/org-ruby/blob/7a28c2e6e91cdaceb1fddc2d870f4458632816e8/spec/html_examples/deflist.org
+
+-skip header
+https://github.com/wallyqs/org-ruby/blob/7a28c2e6e91cdaceb1fddc2d870f4458632816e8/spec/html_examples/skip-header.org
+ this allows you to hide a todo list or other meta information at the top of the file before the first heading.
+- Controlling placement of images
+https://emacs.stackexchange.com/questions/26858/center-image-in-githubs-readme-org?rq=1
+using html alignment attributes.
+ -- add hiding using html comments inline and maybe block if it works.
 Math Support
 - Needs fleshed out...
 - GitHub
@@ -131,9 +150,9 @@ We can prevent headings from showing up on GitHub using a little known feature o
 By including the following at the top of our document, we can use the tag =noexport= or =exclude= on headings that we don't want to show up on GitHub!
 
 #+begin_example
-#+EXPORT_SELECT_TAGS: export
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+TAGS: export noexport
+#+export_select_tags: export
+#+export_exclude_tags: exclude noexport
+#+tags: export noexport
 #+end_example
 
 This took me way too long to find from [[https://github.com/wallyqs/org-ruby/blob/master/spec/html_examples/export-tags.org][here]]. View the raw file [[https://raw.githubusercontent.com/wallyqs/org-ruby/master/spec/html_examples/export-tags.org][here]].
